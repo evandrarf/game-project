@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+margin_right = 1080.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 0, 84 )
+size_flags_horizontal = 3

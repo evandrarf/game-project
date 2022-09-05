@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://script/Rocket.gd" type="Script" id=1]
+[ext_resource path="res://assets/4_1_-removebg-preview.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 85.5983
+height = 51.9359
+
+[node name="Rocket" type="Sprite"]
+position = Vector2( 567, 1763 )
+scale = Vector2( 1.03974, 1.03974 )
+texture = ExtResource( 2 )
+hframes = 2
+frame = 1
+script = ExtResource( 1 )
+speed = 400
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Area2D" type="Area2D" parent="Control"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Area2D"]
+position = Vector2( 0.961792, 0 )
+shape = SubResource( 1 )
