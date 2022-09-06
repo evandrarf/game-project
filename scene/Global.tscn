@@ -1,16 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scene/Rocket.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene/Asteroid.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://script/Soal.gd" type="Script" id=4]
 [ext_resource path="res://assets/background.png" type="Texture" id=5]
+[ext_resource path="res://scene/Menu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://script/Global.gd" type="Script" id=7]
+[ext_resource path="res://script/Menu.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
 font_data = ExtResource( 3 )
 
 [node name="Global" type="Node"]
+script = ExtResource( 7 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -48,7 +52,16 @@ position = Vector2( 292, 895 )
 [node name="Asteroid4" parent="Soal/OpsiContainer" instance=ExtResource( 2 )]
 position = Vector2( 886, 460 )
 
-[connection signal="area_entered" from="Soal/OpsiContainer/Asteroid" to="Soal" method="_on_Asteroid_area_entered" binds= [ 0 ]]
-[connection signal="area_entered" from="Soal/OpsiContainer/Asteroid2" to="Soal" method="_on_Asteroid_area_entered" binds= [ 1 ]]
-[connection signal="area_entered" from="Soal/OpsiContainer/Asteroid3" to="Soal" method="_on_Asteroid_area_entered" binds= [ 2 ]]
-[connection signal="area_entered" from="Soal/OpsiContainer/Asteroid4" to="Soal" method="_on_Asteroid_area_entered" binds= [ 3 ]]
+[node name="Menu" parent="." instance=ExtResource( 6 )]
+
+[node name="Control" parent="Menu" index="0"]
+pause_mode = 2
+script = ExtResource( 8 )
+
+[connection signal="area_entered" from="Soal/OpsiContainer/Asteroid" to="." method="_on_Asteroid4_area_entered" binds= [ 0 ]]
+[connection signal="area_entered" from="Soal/OpsiContainer/Asteroid2" to="." method="_on_Asteroid4_area_entered" binds= [ 1 ]]
+[connection signal="area_entered" from="Soal/OpsiContainer/Asteroid3" to="." method="_on_Asteroid4_area_entered" binds= [ 2 ]]
+[connection signal="area_entered" from="Soal/OpsiContainer/Asteroid4" to="." method="_on_Asteroid4_area_entered" binds= [ 3 ]]
+[connection signal="pressed" from="Menu/Control/NinePatchRect/TextureButton" to="." method="_on_TextureButton_pressed"]
+
+[editable path="Menu"]

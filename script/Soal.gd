@@ -5,9 +5,8 @@ onready var pertanyaan = $Pertanyaan
 #onready var button = $Grid/HBoxContainer/Button
 onready var asteroids = get_all_children($OpsiContainer)
 
-func _ready():
+func _process(delta):
 	pertanyaan.text = soal[nomor_soal]["pertanyaan"]
-	print(asteroids)
 	for i in len(asteroids):
 		var label = asteroids[i].get_node("Label")
 		label.text = soal[nomor_soal]["opsi"][i]
@@ -17,11 +16,18 @@ func _ready():
 
 var nomor_soal = 0
 
-var soal = [{
-	"pertanyaan": "Siapakah pacarnya rahma?",
-	"opsi": ["Ello", "Panji", "Evan", "Faqih"],
-	"jawaban": 1,
-}]
+var soal = [
+	{
+		"pertanyaan": "Siapakah pacarnya rahma?",
+		"opsi": ["Ello", "Panji", "Evan", "Faqih"],
+		"jawaban": 1,
+	},
+	{
+		"pertanyaan": "Candi Borubur merupakan candi agama?",
+		"opsi": ["Hindhu", "Konghuchu", "Katholik", "Buddha"],
+		"jawaban": 3,
+	}
+	]
 
 
 #func _on_pressed(index_pilihan):
@@ -54,12 +60,3 @@ func get_all_children(in_node,arr:=[]):
 #	opsiButton.connect("pressed", self, "_on_pressed")
 #	grid.add_child(boxContainer)
 
-
-func _on_Asteroid_area_entered(area, index):
-	print(index)
-	if(index == soal[nomor_soal]["jawaban"]):
-		print("Jawaban anda benar")
-		print("Pacarnya Rahma adalah ", soal[nomor_soal]["opsi"][index])
-		#print(soal[nomor_soal]["pertanyaan"], " adalah ", soal[nomor_soal]["opsi"][index])
-	else:
-		print("Jawaban anda salah")
