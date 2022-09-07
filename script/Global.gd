@@ -1,16 +1,15 @@
 extends Node
 
-onready var menu = $Menu
+onready var menu = $Menu/Control
 onready var menu_text = $Menu/Control/NinePatchRect/Label
 onready var soal = $Soal
 onready var rocket = $Rocket
-
-const rocket_pos = Vector2(567, 1763)
 
 func _ready():
 	menu.hide()
 	get_tree().paused = false
 
+const rocket_pos = Vector2(567, 1763)
 
 
 func _on_Asteroid4_area_entered(area, index):
@@ -29,3 +28,4 @@ func _on_TextureButton_pressed():
 	get_tree().paused = false
 	menu.hide()
 	rocket.position = rocket_pos
+	soal.position_index = int(round(rand_range(0, 7)))

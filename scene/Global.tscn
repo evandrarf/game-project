@@ -41,21 +41,22 @@ autowrap = true
 [node name="OpsiContainer" type="Node2D" parent="Soal"]
 
 [node name="Asteroid" parent="Soal/OpsiContainer" instance=ExtResource( 2 )]
-position = Vector2( 860, 927 )
+position = Vector2( 222, 695 )
 
 [node name="Asteroid2" parent="Soal/OpsiContainer" instance=ExtResource( 2 )]
-position = Vector2( 258, 432 )
+position = Vector2( 916, 1019 )
 
 [node name="Asteroid3" parent="Soal/OpsiContainer" instance=ExtResource( 2 )]
-position = Vector2( 292, 895 )
+position = Vector2( 295, 1313 )
 
 [node name="Asteroid4" parent="Soal/OpsiContainer" instance=ExtResource( 2 )]
-position = Vector2( 886, 460 )
+position = Vector2( 775, 570 )
 
 [node name="Menu" parent="." instance=ExtResource( 6 )]
 
 [node name="Control" parent="Menu" index="0"]
 pause_mode = 2
+visible = false
 script = ExtResource( 8 )
 
 [connection signal="area_entered" from="Soal/OpsiContainer/Asteroid" to="." method="_on_Asteroid4_area_entered" binds= [ 0 ]]
