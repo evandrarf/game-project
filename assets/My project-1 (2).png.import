@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rocket.png-ee7caa6d60b8c73f0b17d79a887f39b7.stex"
+path="res://.import/My project-1 (2).png-8382d77edce36897b1136f9dc5bc1fe1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rocket.png"
-dest_files=[ "res://.import/rocket.png-ee7caa6d60b8c73f0b17d79a887f39b7.stex" ]
+source_file="res://assets/My project-1 (2).png"
+dest_files=[ "res://.import/My project-1 (2).png-8382d77edce36897b1136f9dc5bc1fe1.stex" ]
 
 [params]
 

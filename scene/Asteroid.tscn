@@ -9,6 +9,8 @@ height = 60.0
 
 [sub_resource type="DynamicFont" id=2]
 size = 40
+outline_size = 3
+outline_color = Color( 0.0705882, 0.0705882, 0.0705882, 1 )
 font_data = ExtResource( 2 )
 
 [node name="Asteroid" type="Area2D"]

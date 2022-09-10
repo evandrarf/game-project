@@ -17,7 +17,8 @@ const asteroids_position = [
 var position_index = 0
 
 func _start() :
-	position_index = int(round(rand_range(0, 7)))
+	randomize()
+	position_index = int(round(rand_range(0, 5)))
 	
 
 func _process(delta):
@@ -26,6 +27,7 @@ func _process(delta):
 		var label = asteroids[i].get_node("Label")
 		label.text = soal[nomor_soal]["opsi"][i]
 		asteroids[i].position = asteroids_position[position_index][i]
+
 
 #print(button.text)
 
@@ -74,6 +76,11 @@ var soal = [
 		"pertanyaan": "Mata uang negara Malaysia yaitu ",
 		"opsi" : ["Rupiah", "Dollar","Yen", "Ringgit"],
 		"jawaban": 3
+	},
+	{
+		"pertanyaan": "Binatang yang bisa hidup di air dan di darat disebut ",
+		"opsi" : ["Terestrial", "Amfibi","Akuatik", "Mamalia"],
+		"jawaban": 1
 	},
 	]
 
