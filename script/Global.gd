@@ -8,6 +8,8 @@ onready var game = $Game
 onready var hud = $HUD/Control
 onready var skor = $Game/Skor
 onready var menu_button_text = $Game/Menu/Control/NinePatchRect/TextureButton/Label
+onready var lobby_game = $HUD/Control/LobbyGame
+onready var settings = $HUD/Control/Settings
 
 var skor_num = 0
 var soal_terakhir = false
@@ -20,6 +22,7 @@ func _ready():
 	randomize()
 	soal.position_index = int(round(rand_range(0, 5)))
 	soal.soal.shuffle()
+	settings.hide()
 
 const rocket_pos = Vector2(567, 1763)
 
@@ -68,3 +71,13 @@ func start_game() :
 	soal.nomor_soal = 0
 	skor_num = 0
 	skor.text = str(skor_num)
+
+
+func _on_SettingsButton_pressed():
+	lobby_game.hide()
+	settings.show()
+
+
+func _on_Back_pressed():
+	lobby_game.show()
+	settings.hide()

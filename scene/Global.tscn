@@ -14,12 +14,17 @@ pause_mode = 2
 
 [node name="HUD" parent="." instance=ExtResource( 9 )]
 
+[node name="LobbyGame" parent="HUD/Control" index="1"]
+visible = true
+
 [connection signal="area_entered" from="Game/Soal/OpsiContainer/Asteroid" to="." method="_on_Asteroid_area_entered" binds= [ 0 ]]
 [connection signal="area_entered" from="Game/Soal/OpsiContainer/Asteroid2" to="." method="_on_Asteroid_area_entered" binds= [ 1 ]]
 [connection signal="area_entered" from="Game/Soal/OpsiContainer/Asteroid3" to="." method="_on_Asteroid_area_entered" binds= [ 2 ]]
 [connection signal="area_entered" from="Game/Soal/OpsiContainer/Asteroid4" to="." method="_on_Asteroid_area_entered" binds= [ 3 ]]
 [connection signal="pressed" from="Game/Menu/Control/NinePatchRect/TextureButton" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="HUD/Control/TextureButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="HUD/Control/LobbyGame/TextureButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="HUD/Control/LobbyGame/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="HUD/Control/Settings/Back" to="." method="_on_Back_pressed"]
 
 [editable path="Game"]
 [editable path="Game/Menu"]
