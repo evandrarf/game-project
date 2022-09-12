@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/IMG_20220906_124937-removebg-preview.png" type="Texture" id=2]
+[ext_resource path="res://My project-1 (3).png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="ProfileMember" type="Node2D"]
+position = Vector2( 13, -379 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_left = 27.0
+margin_top = 395.0
+margin_right = 545.0
+margin_bottom = 808.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect" type="NinePatchRect" parent="."]
+margin_left = 222.0
+margin_top = 482.0
+margin_right = 362.0
+margin_bottom = 623.0
+texture = ExtResource( 3 )
+
+[node name="Nama" type="Label" parent="."]
+margin_left = 92.0
+margin_top = 602.0
+margin_right = 491.0
+margin_bottom = 677.0
+custom_fonts/font = SubResource( 1 )
+text = "Destika Rahma"
+align = 1
+valign = 1
+
+[node name="Peran" type="Label" parent="."]
+margin_left = 53.0
+margin_top = 655.0
+margin_right = 530.0
+margin_bottom = 730.0
+custom_fonts/font = SubResource( 1 )
+text = "(Project Manager)"
+align = 1
+valign = 1

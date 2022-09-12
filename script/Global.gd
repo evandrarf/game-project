@@ -10,6 +10,7 @@ onready var skor = $Game/Skor
 onready var menu_button_text = $Game/Menu/Control/NinePatchRect/TextureButton/Label
 onready var lobby_game = $HUD/Control/LobbyGame
 onready var settings = $HUD/Control/Settings
+onready var nextButton = $Game/Menu/Control/NinePatchRect/TextureButton
 
 var skor_num = 0
 var soal_terakhir = false
@@ -23,6 +24,9 @@ func _ready():
 	soal.position_index = int(round(rand_range(0, 5)))
 	soal.soal.shuffle()
 	settings.hide()
+	var shortcut=ShortCut.new()
+	shortcut.set_shortcut(InputMap.get_action_list("next")[0])#I have configured in the InputMap an InputEventKey called selectWeapon1(it is the only one so we need the zero-th index)
+	nextButton.set_shortcut(shortcut)
 
 const rocket_pos = Vector2(567, 1763)
 
@@ -54,7 +58,7 @@ func _on_TextureButton_pressed():
 	menu.hide()
 	rocket.position = rocket_pos
 	randomize()
-	soal.position_index = int(round(rand_range(0, 5)))
+	soal.position_index = int(round(rand_range(0, 11)))
 	if(soal.nomor_soal == 9) :
 		soal_terakhir = true
 	if(soal.nomor_soal == 10):
@@ -69,6 +73,7 @@ func start_game() :
 	hud.show()
 	game.hide()
 	soal.nomor_soal = 0
+	soal_terakhir = false
 	skor_num = 0
 	skor.text = str(skor_num)
 
@@ -78,6 +83,4 @@ func _on_SettingsButton_pressed():
 	settings.show()
 
 
-func _on_Back_pressed():
-	lobby_game.show()
-	settings.hide()
+

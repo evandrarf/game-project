@@ -39,25 +39,28 @@ margin_top = 34.0
 margin_right = -64.0
 margin_bottom = 231.0
 custom_fonts/font = SubResource( 1 )
-text = "Test"
+text = "Siapakah Nama Presiden Indonesia Saat ini"
 align = 1
 autowrap = true
 
 [node name="OpsiContainer" type="Node2D" parent="Soal"]
 
 [node name="Asteroid" parent="Soal/OpsiContainer" instance=ExtResource( 2 )]
-position = Vector2( 222, 695 )
+position = Vector2( 292, 754 )
 
 [node name="Asteroid2" parent="Soal/OpsiContainer" instance=ExtResource( 2 )]
-position = Vector2( 916, 1019 )
+position = Vector2( 269, 1260 )
 
 [node name="Asteroid3" parent="Soal/OpsiContainer" instance=ExtResource( 2 )]
-position = Vector2( 295, 1313 )
+position = Vector2( 829, 889 )
 
 [node name="Asteroid4" parent="Soal/OpsiContainer" instance=ExtResource( 2 )]
-position = Vector2( 775, 570 )
+position = Vector2( 937, 1296 )
 
 [node name="Menu" parent="." instance=ExtResource( 8 )]
+
+[node name="Control" parent="Menu" index="0"]
+visible = false
 
 [node name="Skor" type="Label" parent="."]
 margin_left = 40.0
@@ -68,3 +71,5 @@ custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 1
 valign = 1
+
+[editable path="Menu"]

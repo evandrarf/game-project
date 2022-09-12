@@ -1,8 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/5.png" type="Texture" id=1]
 [ext_resource path="res://assets/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/Button 1.png" type="Texture" id=3]
+[ext_resource path="res://scene/ProfileMember.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/WIN_20220912_10_19_16_Pro.jpg" type="Texture" id=5]
+[ext_resource path="res://assets/WhatsApp Image 2022-09-12 at 09.51.02.jpeg" type="Texture" id=6]
+[ext_resource path="res://assets/WhatsApp Image 2022-09-12 at 09.47.58.jpeg" type="Texture" id=7]
+[ext_resource path="res://assets/WhatsApp Image 2022-05-25 at 12.40.33 PM.jpeg" type="Texture" id=8]
+[ext_resource path="res://script/HUD.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=2]
 size = 200
@@ -11,12 +17,13 @@ outline_color = Color( 1, 0.603922, 0, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=1]
-size = 120
+size = 100
 outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource( 9 )
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
@@ -57,12 +64,13 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Control/LobbyGame/TextureButton"]
 margin_left = 65.0
-margin_top = 38.0
+margin_top = 22.0
 margin_right = 672.0
-margin_bottom = 250.0
+margin_bottom = 229.0
 custom_fonts/font = SubResource( 1 )
 text = "Play"
 align = 1
+valign = 1
 
 [node name="SettingsButton" type="TextureButton" parent="Control/LobbyGame"]
 margin_left = 187.0
@@ -77,12 +85,13 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Control/LobbyGame/SettingsButton"]
 margin_left = 65.0
-margin_top = 38.0
+margin_top = 19.0
 margin_right = 672.0
-margin_bottom = 250.0
+margin_bottom = 225.0
 custom_fonts/font = SubResource( 1 )
 text = "Settings"
 align = 1
+valign = 1
 
 [node name="Settings" type="Control" parent="Control"]
 anchor_right = 1.0
@@ -101,18 +110,19 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Control/Settings/VolumeButton"]
 margin_left = 65.0
-margin_top = 38.0
+margin_top = 22.0
 margin_right = 672.0
-margin_bottom = 250.0
+margin_bottom = 221.0
 custom_fonts/font = SubResource( 1 )
 text = "Volume"
 align = 1
+valign = 1
 
 [node name="AboutUs" type="TextureButton" parent="Control/Settings"]
 margin_left = 176.0
-margin_top = 1039.0
+margin_top = 1027.0
 margin_right = 916.0
-margin_bottom = 1301.0
+margin_bottom = 1289.0
 texture_normal = ExtResource( 3 )
 expand = true
 __meta__ = {
@@ -121,12 +131,13 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Control/Settings/AboutUs"]
 margin_left = 65.0
-margin_top = 38.0
+margin_top = 19.0
 margin_right = 672.0
-margin_bottom = 250.0
+margin_bottom = 215.0
 custom_fonts/font = SubResource( 1 )
 text = "About Us"
 align = 1
+valign = 1
 
 [node name="Back" type="TextureButton" parent="Control/Settings"]
 margin_left = 179.0
@@ -141,9 +152,112 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Control/Settings/Back"]
 margin_left = 65.0
-margin_top = 38.0
+margin_top = 22.0
 margin_right = 672.0
-margin_bottom = 250.0
+margin_bottom = 212.0
 custom_fonts/font = SubResource( 1 )
 text = "Back"
 align = 1
+valign = 1
+
+[node name="AboutUs" type="Control" parent="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GridContainer" type="GridContainer" parent="Control/AboutUs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+
+[node name="ProfileMember" parent="Control/AboutUs/GridContainer" instance=ExtResource( 4 )]
+position = Vector2( -27, -131 )
+
+[node name="Nama" parent="Control/AboutUs/GridContainer/ProfileMember" index="2"]
+text = "Christian Rafaello"
+
+[node name="Peran" parent="Control/AboutUs/GridContainer/ProfileMember" index="3"]
+text = "(Game Designer)"
+
+[node name="ProfileMember2" parent="Control/AboutUs/GridContainer" instance=ExtResource( 4 )]
+position = Vector2( 529, -134 )
+
+[node name="TextureRect" parent="Control/AboutUs/GridContainer/ProfileMember2" index="1"]
+texture = ExtResource( 8 )
+
+[node name="Nama" parent="Control/AboutUs/GridContainer/ProfileMember2" index="2"]
+text = "Dadang Panji"
+
+[node name="Peran" parent="Control/AboutUs/GridContainer/ProfileMember2" index="3"]
+text = "(Assistant Producer)"
+
+[node name="ProfileMember3" parent="Control/AboutUs/GridContainer" instance=ExtResource( 4 )]
+position = Vector2( -16, 285 )
+
+[node name="ProfileMember4" parent="Control/AboutUs/GridContainer" instance=ExtResource( 4 )]
+position = Vector2( 529, 718 )
+
+[node name="TextureRect" parent="Control/AboutUs/GridContainer/ProfileMember4" index="1"]
+texture = ExtResource( 7 )
+
+[node name="Nama" parent="Control/AboutUs/GridContainer/ProfileMember4" index="2"]
+text = "Faqih Ubaidah"
+
+[node name="Peran" parent="Control/AboutUs/GridContainer/ProfileMember4" index="3"]
+text = "(QA Tester)"
+
+[node name="ProfileMember5" parent="Control/AboutUs/GridContainer" instance=ExtResource( 4 )]
+position = Vector2( -18, 716 )
+
+[node name="TextureRect" parent="Control/AboutUs/GridContainer/ProfileMember5" index="1"]
+texture = ExtResource( 5 )
+
+[node name="Nama" parent="Control/AboutUs/GridContainer/ProfileMember5" index="2"]
+text = "Evandra Raditya"
+
+[node name="Peran" parent="Control/AboutUs/GridContainer/ProfileMember5" index="3"]
+text = "(Game Programmer)"
+
+[node name="ProfileMember6" parent="Control/AboutUs/GridContainer" instance=ExtResource( 4 )]
+position = Vector2( 525, 285 )
+
+[node name="TextureRect" parent="Control/AboutUs/GridContainer/ProfileMember6" index="1"]
+texture = ExtResource( 6 )
+
+[node name="Nama" parent="Control/AboutUs/GridContainer/ProfileMember6" index="2"]
+text = "Dzaky Raditya"
+
+[node name="Peran" parent="Control/AboutUs/GridContainer/ProfileMember6" index="3"]
+text = "(QA Tester)"
+
+[node name="Back" type="TextureButton" parent="Control/AboutUs"]
+margin_left = 282.0
+margin_top = 1592.0
+margin_right = 816.0
+margin_bottom = 1781.0
+texture_normal = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Control/AboutUs/Back"]
+margin_left = 27.0
+margin_top = 12.0
+margin_right = 505.0
+margin_bottom = 159.0
+custom_fonts/font = SubResource( 1 )
+text = "Back"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Control/Settings/AboutUs" to="." method="_on_AboutUs_pressed"]
+[connection signal="pressed" from="Control/Settings/Back" to="." method="_on_Back_pressed" binds= [ "settings" ]]
+[connection signal="pressed" from="Control/AboutUs/Back" to="." method="_on_Back_pressed" binds= [ "about us" ]]
+
+[editable path="Control/AboutUs/GridContainer/ProfileMember"]
+[editable path="Control/AboutUs/GridContainer/ProfileMember2"]
+[editable path="Control/AboutUs/GridContainer/ProfileMember3"]
+[editable path="Control/AboutUs/GridContainer/ProfileMember4"]
+[editable path="Control/AboutUs/GridContainer/ProfileMember5"]
+[editable path="Control/AboutUs/GridContainer/ProfileMember6"]

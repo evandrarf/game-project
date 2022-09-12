@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 85.5983
-height = 51.9359
+height = 0.0
 
 [node name="Rocket" type="Sprite"]
 position = Vector2( 567, 1763 )
@@ -23,5 +23,5 @@ margin_bottom = 40.0
 [node name="Area2D" type="Area2D" parent="Control"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Area2D"]
-position = Vector2( 0.961792, 0 )
+position = Vector2( 0.961792, -6.73242 )
 shape = SubResource( 1 )

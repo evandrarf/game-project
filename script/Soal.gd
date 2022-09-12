@@ -6,19 +6,24 @@ onready var pertanyaan = $Pertanyaan
 onready var asteroids = get_all_children($OpsiContainer)
 
 const asteroids_position = [
-	[Vector2(803, 1009), Vector2(359, 1180), Vector2(337, 714), Vector2(735, 404)], 
-	[Vector2(318, 1408), Vector2(804, 1080), Vector2(551, 774), Vector2(917, 558)],
-	[Vector2(779, 1137), Vector2(323, 863), Vector2(895, 544), Vector2(197, 478)],
-	[Vector2(305, 553), Vector2(781, 720), Vector2(350, 972), Vector2(758, 1280)],
-	[Vector2(255, 713), Vector2(808, 571), Vector2(824, 1015), Vector2(283, 1361)],
-	[Vector2(775, 570), Vector2(222, 695), Vector2(916, 1019), Vector2(295, 1313)],
-	]
+	[Vector2(222, 695), Vector2(775, 570), Vector2(292,1214), Vector2(916, 1019)],
+	[Vector2(301, 603), Vector2(685, 800), Vector2(204, 1147), Vector2(831, 1151)],
+	[Vector2(760, 788), Vector2(256, 693), Vector2(272, 1121), Vector2(857, 1222)],
+	[Vector2(926, 947), Vector2(609, 750), Vector2(404, 1132), Vector2(137, 800)],
+	[Vector2(326, 1081), Vector2(171, 711), Vector2(674, 701), Vector2(856, 1019)],
+	[Vector2(734, 1360), Vector2(932, 1024), Vector2(228, 1169), Vector2(311, 755)],
+	[Vector2(173, 890), Vector2(684, 878), Vector2(360, 1294), Vector2(920, 1252)],
+	[Vector2(920, 967), Vector2(384, 832), Vector2(771, 1247), Vector2(197, 1289)],
+	[Vector2(821, 784), Vector2(921, 1367), Vector2(377, 1247), Vector2(153, 1021)],
+	[Vector2(289, 1230), Vector2(218, 761), Vector2(829, 889), Vector2(937, 1296)],
+	[Vector2(252, 865), Vector2(680, 751), Vector2(901, 1061), Vector2(611, 1309)],
+]
 
 var position_index = 0
 
 func _start() :
 	randomize()
-	position_index = int(round(rand_range(0, 5)))
+	position_index = int(round(rand_range(0, 11)))
 	
 
 func _process(delta):
