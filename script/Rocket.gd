@@ -65,9 +65,4 @@ func _process(delta):
 	position.y = clamp(position.y, 0, screen_size.y)
 
 
-func pause_rocket(val):
-	if(val == true):
-		pause_mode = Node.PAUSE_MODE_STOP 
-	else : 
-		pause_mode = Node.PAUSE_MODE_PROCESS
 

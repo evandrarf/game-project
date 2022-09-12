@@ -31,6 +31,7 @@ visible = true
 [connection signal="area_entered" from="Game/Soal/OpsiContainer/Asteroid3" to="." method="_on_Asteroid_area_entered" binds= [ 2 ]]
 [connection signal="area_entered" from="Game/Soal/OpsiContainer/Asteroid4" to="." method="_on_Asteroid_area_entered" binds= [ 3 ]]
 [connection signal="pressed" from="Game/Menu/Control/NinePatchRect/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Game/Menu/Control/XButton" to="." method="_on_XButton_pressed"]
 [connection signal="pressed" from="HUD/Control/LobbyGame/TextureButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="HUD/Control/LobbyGame/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 
