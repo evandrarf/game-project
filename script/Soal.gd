@@ -23,7 +23,7 @@ var position_index = 0
 
 func _start() :
 	randomize()
-	position_index = int(round(rand_range(0, 11)))
+	position_index = int(round(rand_range(0, 10)))
 	
 
 func _process(delta):

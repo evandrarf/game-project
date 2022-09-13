@@ -35,7 +35,6 @@ func _ready():
 
 func _process(delta):
 	if(is_game_starting and Input.is_action_pressed("ui_cancel")) :
-
 		pause_game()
 		
 		
@@ -61,6 +60,7 @@ func _on_Asteroid_area_entered(area, index):
 	get_tree().paused = true
 	var arr_soal = soal.soal
 	var nomor_soal = soal.nomor_soal
+	menu_button_text.text = "Next"
 	if (!soal_terakhir) :
 		print(index)
 		if(index == arr_soal[nomor_soal]["jawaban"]):
@@ -88,7 +88,7 @@ func _on_TextureButton_pressed():
 		game.hide()
 	else :
 		randomize()
-		soal.position_index = int(round(rand_range(0, 11)))
+		soal.position_index = int(round(rand_range(0, 10)))
 		if(soal.nomor_soal == 9) :
 			soal_terakhir = true
 		if(soal.nomor_soal == 10):
@@ -100,6 +100,7 @@ func _on_StartButton_pressed():
 	hud.hide()
 	game.show()
 	is_game_starting = true
+	XButton.hide()
 
 
 func start_game() :
@@ -110,6 +111,7 @@ func start_game() :
 	skor_num = 0
 	skor.text = str(skor_num)
 	is_game_starting = true
+	back_to_home = false
 
 
 func _on_SettingsButton_pressed():
