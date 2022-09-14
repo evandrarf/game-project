@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Game.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/Nyawa.tscn" type="PackedScene" id=2]
 [ext_resource path="res://script/Global.gd" type="Script" id=7]
 [ext_resource path="res://scene/HUD.tscn" type="PackedScene" id=9]
 
@@ -17,6 +18,8 @@ pause_mode = 2
 
 [node name="Control" parent="Game/Menu" index="0"]
 visible = true
+
+[node name="Nyawa" parent="Game" instance=ExtResource( 2 )]
 
 [node name="HUD" parent="." instance=ExtResource( 9 )]
 
@@ -36,6 +39,7 @@ visible = true
 
 [editable path="Game"]
 [editable path="Game/Menu"]
+[editable path="Game/Nyawa"]
 [editable path="HUD"]
 [editable path="HUD/Control/AboutUs/GridContainer/ProfileMember"]
 [editable path="HUD/Control/AboutUs/GridContainer/ProfileMember2"]

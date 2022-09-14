@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/image-removebg-preview (3).png" type="Texture" id=1]
+
+[node name="Nyawa" type="Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -484.0
+margin_top = -188.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_bottom = 1.0
+margin_right = 165.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+anchor_bottom = 1.0
+margin_left = 165.0
+margin_right = 335.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchor_bottom = 1.0
+margin_left = 309.0
+margin_right = 480.0
+texture = ExtResource( 1 )
+expand = true
