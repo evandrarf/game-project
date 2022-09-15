@@ -1,0 +1,13 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+valid=false
+
+[deps]
+
+source_file="res://assets/musik/_8 Bit Fun!_ Happy Cute Chiptune Game Music by HeatleyBros.mp3"
+[params]
+
+loop=true
+loop_offset=0
