@@ -80,14 +80,59 @@ var soal = [
 	{
 		"pertanyaan": "Mata uang negara Malaysia yaitu ",
 		"opsi" : ["Rupiah", "Dollar","Yen", "Ringgit"],
-		"jawaban": 3
+		"jawaban": 3,
 	},
 	{
 		"pertanyaan": "Binatang yang bisa hidup di air dan di darat disebut ",
 		"opsi" : ["Terestrial", "Amfibi","Akuatik", "Mamalia"],
-		"jawaban": 1
+		"jawaban": 1,
 	},
-	]
+	{
+		"pertanyaan" : "Siapakah penemu listrik pertama kali?",
+		"opsi" : ["Benjamin Franklin", "Willian Gilbert", "Thales", "Michael Faraday"],
+		"jawaban": 2,
+	},
+	{
+		"pertanyaan": "Yang merupakan rumus dari hukum newton II adalah?",
+		"opsi": ["F=m.a", "∑F = 0", " w = m x g ", " Fg = u x N "],
+		"jawaban": 0,
+	},
+	{
+		"pertanyaan":"Bangsa pertama yang menjajah Indonesia adalah?",
+		"opsi": ["Belanda","Inggris","Portugis","Spanyol"],
+		"jawaban":2,
+	},
+	{
+		"pertanyaan":"Negara terkecil di dunia adalah?",
+		"opsi":["San Marino","Vatikan","Tuvalu","Nauru"],
+		"jawaban":1,
+	},
+	{
+		"pertanyaan": "Kerajaan indonesia yang pernah menguasai hampir seluruh kawasan asia tenggara adalah?",
+		"opsi":["Kutai","Mataram","Sriwijaya","Majapahit"],
+		"jawaban":3,
+	},
+	{
+		"pertanyaan":"Perang Diponegoro terjadi selama 5 tahun, mulai tahun… sampai?",
+		"opsi":["1815-1820","1789-1794", "1820-1825","1825-1830"],
+		"jawaban":3,
+	},
+	{
+		"pertanyaan":"Lagu Garuda Pancasila dikarang oleh?",
+		"opsi":["Sudharnoto","Ismail Marzuki","Soepratman","Ibu soed"],
+		"jawaban":0,
+	},
+	{
+		"pertanyaan":"Lembaga yang berwenang melantik Presiden dan Wakil Presiden adalah?",
+		"opsi":["DPR","MPR","MA","MK"],
+		"jawaban":1,
+	},
+	{
+		"pertanyaan": "Negara terkaya didunia untuk sekarang adalah?",
+		"opsi":["Dubai","Qatar","China","Luksemburg"],
+		"jawaban":3,
+	}
+]
 
 
 #func _on_pressed(index_pilihan):
@@ -120,3 +165,8 @@ func get_all_children(in_node,arr:=[]):
 #	opsiButton.connect("pressed", self, "_on_pressed")
 #	grid.add_child(boxContainer)
 
+	#{
+	#	"pertanyaan":"Untuk membuat 5 potong kue, Letek membutuhkan telur ½ kg. Berapa telur yang dibutuhkan Letek jika ingin membuat 50 potong kue?",
+	#	"opsi":["5kg","5.5kg","6kg","7kg"],
+	#	"jawaban":0,
+	#},

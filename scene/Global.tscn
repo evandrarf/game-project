@@ -1,19 +1,28 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Game.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene/Nyawa.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/musik/home-screen-music.mp3" type="AudioStream" id=3]
-[ext_resource path="res://assets/musik/game_music.mp3" type="AudioStream" id=4]
+[ext_resource path="res://assets/musik game buatan sendiri.mp3" type="AudioStream" id=4]
 [ext_resource path="res://script/Global.gd" type="Script" id=7]
 [ext_resource path="res://scene/HUD.tscn" type="PackedScene" id=9]
+
+[sub_resource type="InputEventAction" id=1]
+action = "ui_accept"
+
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
+
+[sub_resource type="InputEventAction" id=3]
+action = "ui_accept"
+
+[sub_resource type="ShortCut" id=4]
+shortcut = SubResource( 3 )
 
 [node name="Global" type="Node"]
 script = ExtResource( 7 )
 
 [node name="Game" parent="." instance=ExtResource( 1 )]
-
-[node name="AnimatedSprite" parent="Game/Rocket/Control2" index="0"]
-frame = 0
 
 [node name="Pertanyaan" parent="Game/Soal" index="0"]
 text = "Siapakah Nama Presiden Pertama Indonesia"
@@ -23,6 +32,9 @@ pause_mode = 2
 
 [node name="Control" parent="Game/Menu" index="0"]
 visible = true
+
+[node name="TextureButton" parent="Game/Menu/Control/NinePatchRect" index="1"]
+shortcut = SubResource( 2 )
 
 [node name="Nyawa" parent="Game" instance=ExtResource( 2 )]
 
@@ -35,7 +47,13 @@ stream = ExtResource( 4 )
 [node name="LobbyGame" parent="HUD/Control" index="1"]
 visible = true
 
-[node name="AboutUs" parent="HUD/Control" index="3"]
+[node name="TextureButton" parent="HUD/Control/LobbyGame" index="1"]
+shortcut = SubResource( 4 )
+
+[node name="Settings" parent="HUD/Control" index="2"]
+visible = true
+
+[node name="GridContainer" parent="HUD/Control/AboutUs" index="0"]
 visible = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HUD"]
@@ -49,6 +67,8 @@ stream = ExtResource( 3 )
 [connection signal="pressed" from="Game/Menu/Control/XButton" to="." method="_on_XButton_pressed"]
 [connection signal="pressed" from="HUD/Control/LobbyGame/TextureButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="HUD/Control/LobbyGame/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="HUD/Control/LobbyGame/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="HUD/Control/Settings/VolumeButton" to="." method="_on_VolumeButton_pressed"]
 
 [editable path="Game"]
 [editable path="Game/Rocket"]

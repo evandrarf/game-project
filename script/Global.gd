@@ -22,6 +22,7 @@ var soal_terakhir = false
 var back_to_home = false
 var is_game_starting = false
 var nyawa = 3
+var audio_play = true
 
 func _ready():
 	menu.hide()
@@ -34,11 +35,9 @@ func _ready():
 	soal.soal.shuffle()
 	settings.hide()
 	XButton.hide()
-	var shortcut=ShortCut.new()
-	shortcut.set_shortcut(InputMap.get_action_list("next")[0])#I have configured in the InputMap an InputEventKey called selectWeapon1(it is the only one so we need the zero-th index)
-	nextButton.set_shortcut(shortcut)
 	nyawa = 3
-	home_screen_music.play()
+	if(audio_play):
+		home_screen_music.play()
 
 func _process(delta):
 	if(is_game_starting and Input.is_action_pressed("ui_cancel")) :
@@ -82,7 +81,6 @@ func _on_Asteroid_area_entered(area, index):
 	var nomor_soal = soal.nomor_soal
 	menu_button_text.text = "Next"
 	if (!soal_terakhir) :
-		print(index)
 		if(index == arr_soal[nomor_soal]["jawaban"]):
 			menu_text.text = "Jawaban Anda Benar"
 			skor_num += 1
@@ -108,8 +106,9 @@ func _on_TextureButton_pressed():
 		hud.show()
 		game.hide()
 		nyawa = 3
-		game_music.stop()
-		home_screen_music.play()
+		if(audio_play):
+			game_music.stop()
+			home_screen_music.play()
 	else :
 		randomize()
 		soal.position_index = int(round(rand_range(0, 10)))
@@ -126,8 +125,12 @@ func _on_StartButton_pressed():
 	is_game_starting = true
 	XButton.hide()
 	nyawa = 3
-	game_music.play()
-	home_screen_music.stop()
+	skor_num = 0
+	skor.text = str(skor_num)
+	soal.nomor_soal = 0
+	if(audio_play):
+		game_music.play()
+		home_screen_music.stop()
 	
 	for i in love:
 		i.show()
@@ -142,8 +145,9 @@ func start_game() :
 	skor.text = str(skor_num)
 	is_game_starting = true
 	back_to_home = false
-	home_screen_music.play()
-	game_music.stop()
+	if(audio_play):
+		home_screen_music.play()
+		game_music.stop()
 
 
 func _on_SettingsButton_pressed():
@@ -168,3 +172,15 @@ func get_all_children(in_node,arr:=[]):
 		#arr = get_all_children(child,arr)
 	arr = in_node.get_children()
 	return arr
+
+
+func _on_QuitButton_pressed():
+	get_tree().quit()
+
+
+func _on_VolumeButton_pressed():
+	audio_play = !audio_play
+	if(!audio_play):
+		home_screen_music.stop()
+	else :
+		home_screen_music.play()
