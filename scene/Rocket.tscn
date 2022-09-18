@@ -1,8 +1,9 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://script/Rocket.gd" type="Script" id=1]
-[ext_resource path="res://assets/4_1_-removebg-preview.png" type="Texture" id=2]
-[ext_resource path="res://assets/api/api.png" type="Texture" id=3]
+[ext_resource path="res://assets/rocket.png" type="Texture" id=2]
+[ext_resource path="res://assets/fire animation/api.png" type="Texture" id=3]
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 85.5983

@@ -1,9 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/My project-1 (1).png" type="Texture" id=2]
-[ext_resource path="res://assets/IMG_20220906_124937-removebg-preview.png" type="Texture" id=3]
+[ext_resource path="res://assets/button 2.png" type="Texture" id=2]
+[ext_resource path="res://assets/menu background.png" type="Texture" id=3]
 [ext_resource path="res://assets/gross-dark-cross.png" type="Texture" id=4]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 64

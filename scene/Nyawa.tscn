@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets/image-removebg-preview (3).png" type="Texture" id=1]
+[ext_resource path="res://assets/love.png" type="Texture" id=1]
+
 
 [node name="Nyawa" type="Control"]
 anchor_left = 1.0

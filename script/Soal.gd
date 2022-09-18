@@ -88,13 +88,13 @@ var soal = [
 		"jawaban": 1,
 	},
 	{
-		"pertanyaan" : "Siapakah penemu listrik pertama kali?",
-		"opsi" : ["Benjamin Franklin", "Willian Gilbert", "Thales", "Michael Faraday"],
-		"jawaban": 2,
+		"pertanyaan" : "Gunung tertinggi di Indonesia adalah?",
+		"opsi" : ["Semeru", "Kerinci", "Krakatau", "Puncak Jaya"],
+		"jawaban": 3,
 	},
 	{
 		"pertanyaan": "Yang merupakan rumus dari hukum newton II adalah?",
-		"opsi": ["F=m.a", "∑F = 0", " w = m x g ", " Fg = u x N "],
+		"opsi": ["F = m.a", "∑F = 0", " w = m x g ", " Fg = u x N "],
 		"jawaban": 0,
 	},
 	{
