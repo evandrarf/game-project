@@ -32,6 +32,7 @@ func _ready():
 	skor.text = str(skor_num)
 	randomize()
 	soal.position_index = int(round(rand_range(0, 5)))
+	randomize()
 	soal.soal.shuffle()
 	settings.hide()
 	XButton.hide()

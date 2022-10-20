@@ -23,18 +23,16 @@ shortcut = SubResource( 3 )
 script = ExtResource( 7 )
 
 [node name="Game" parent="." instance=ExtResource( 1 )]
+visible = false
 
 [node name="AnimatedSprite" parent="Game/Rocket/Control2" index="0"]
-frame = 3
+frame = 5
 
 [node name="Pertanyaan" parent="Game/Soal" index="0"]
 text = "Siapakah Nama Presiden Pertama Indonesia"
 
 [node name="Menu" parent="Game" index="3"]
 pause_mode = 2
-
-[node name="Control" parent="Game/Menu" index="0"]
-visible = true
 
 [node name="TextureButton" parent="Game/Menu/Control/NinePatchRect" index="1"]
 shortcut = SubResource( 2 )
